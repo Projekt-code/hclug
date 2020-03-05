@@ -1,0 +1,13 @@
+{
+  "name": "hlug",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "buefy": "^0.8.12",
+    "gridsome": "^0.7.0"
+  }
+}
