@@ -8,7 +8,12 @@
           </figure>
         </div>
         <div class="column is-two-thirds has-text-left">
-          <vue-command  hide-bar=true :prompt="prompt" :commands="commands" />
+          <vue-command
+            :yargs-options="{'short-option-groups': false }"
+            hide-bar="true"
+            :prompt="prompt"
+            :commands="commands"
+          />
         </div>
       </div>
     </section>
@@ -40,35 +45,51 @@ export default {
   },
   data() {
     return {
-      prompt: "~root@hlug:#",
+      prompt: "root@hlug:#",
       commands: {
         // yargs arguments
         ls: () => {
-          return `
+          return (
+            `
           run.sh
-          `;
+          `
+          );
         },
-        "run.sh": ()=>{
+        "run.sh": () => {
           return `
           do something here
           `;
+        },
+        vi: () =>{
+          return `Coming Soon`
+        },
+        vim: () =>{
+          return `Coming Soon`
+        },
+        nano: () => {
+          return `
+          root@hlug:# apt-get remove nano <br/>
+          root@hlug:# apt-get install vim <br/>
+          root@hlug:# ln -s /usr/bin/vim /usr/bin/nano <br/>
+          `
         }
       }
     };
-  },
-  mounted() {
-    setInterval(() => {
-      this.changeID();
-    }, 3000);
-  },
-  methods: {
-    changeID() {
-      if (this.showID == 0) {
-        this.showID = Math.floor(Math.random() * 5);
-      } else {
-        this.showID = 0;
-      }
-    }
   }
 };
 </script>
+<style lang="scss">
+.vue-command {
+  .term {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+  }
+
+  .term-std {
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: hidden;
+  }
+}
+</style>
