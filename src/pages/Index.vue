@@ -1,18 +1,16 @@
 <template>
   <Layout>
     <section class="section">
-    <div class="columns">
-      <div class="column is-one-third">
-        <figure class="image">
-          <g-image alt="Logo" src="~/Logo.png" />
-        </figure>
+      <div class="columns">
+        <div class="column is-one-third">
+          <figure class="image">
+            <g-image alt="Logo" src="~/Logo.png" />
+          </figure>
+        </div>
+        <div class="column is-two-thirds has-text-left">
+          <vue-command  hide-bar=true :prompt="prompt" :commands="commands" />
+        </div>
       </div>
-      <div class="column is-two-thirds has-text-centered">
-        <figure class="image">
-          <g-image :alt="images[showID].text" :src="images[showID].src"/>
-        </figure>
-      </div>
-    </div>
     </section>
     <section class="section has-background-white">
       <div class="columns">
@@ -26,41 +24,51 @@
           <p>We are a group of enthusiastic people ranging from students to professional experts willing to teach and foster the growth of Linux.</p>
         </div>
       </div>
-      
     </section>
-
   </Layout>
 </template>
 
 <script>
+import VueCommand from "vue-command";
+import "vue-command/dist/vue-command.css";
 export default {
+  components: {
+    VueCommand
+  },
   metaInfo: {
     title: "Hello, world! Err, I mean HCLUG"
   },
-  data(){
+  data() {
     return {
-      showID: 0,
-      images: [
-        {id: 0, src: "/images/term.gif",text: ""},
-        {id: 1, src: "https://media.giphy.com/media/xUOxeZWKz8sD7SphGo/giphy.gif",text: "JS"},
-        {id: 2, src: "https://media.giphy.com/media/mpF9fbOySV7aw/giphy.gif",text: "WATWWA"}      
-      ]
-    }
-  },
-  mounted(){
-    setInterval(()=>{
-      this.changeID();
-    },3000)
-  },
-  methods:{
-      changeID(){
-        if(this.showID == 0){
-          this.showID = Math.floor(Math.random() * 5)
-        }else{
-          this.showID = 0
+      prompt: "~root@hlug:#",
+      commands: {
+        // yargs arguments
+        ls: () => {
+          return `
+          run.sh
+          `;
+        },
+        "run.sh": ()=>{
+          return `
+          do something here
+          `;
         }
-        
+      }
+    };
+  },
+  mounted() {
+    setInterval(() => {
+      this.changeID();
+    }, 3000);
+  },
+  methods: {
+    changeID() {
+      if (this.showID == 0) {
+        this.showID = Math.floor(Math.random() * 5);
+      } else {
+        this.showID = 0;
       }
     }
+  }
 };
 </script>

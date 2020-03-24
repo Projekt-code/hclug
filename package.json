@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "buefy": "^0.8.12",
-    "gridsome": "^0.7.0"
+    "gridsome": "^0.7.0",
+    "vue-command": "^7.3.2"
   }
 }
