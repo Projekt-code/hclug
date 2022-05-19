@@ -21,7 +21,8 @@
       <div class="columns">
         <div class="column">
           <h2 class="title has-text-centered">Join Us</h2>
-          <p>Our meetings are the first and third Thursdays of each month. Check out our Meet Up or Slack Group for more details.</p>
+          <p>Our meetings are the first and third Thursdays of each month. Check out our Mattermost Group for more details.</p>
+          <p><a href="https://chat.boonelinux.com">chat.boonelinux.com</a></p>
         </div>
 
         <div class="column">
