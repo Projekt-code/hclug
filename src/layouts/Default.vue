@@ -5,15 +5,9 @@
       <div class="columns">
         <div class="column"></div>
         <div class="column has-text-centered">
-            <a class="has-text-white" href="https://hilug.slack.com/" target="_blank">
+            <a class="has-text-white" href="https://chat.boonelinux.com/" target="_blank">
               <span class="icon is-large">
-                <g-image alt="Slack" src="~/images/slack.png" />
-              </span>
-            </a>
-            &nbsp;
-            <a class="has-text-white" href="https://www.meetup.com/High-Country-Linux-Users-Group-HiLUG/" target="_blank">
-              <span class="icon is-large">
-                <g-image alt="Meetup" src="~/images/meetup.png" />
+                <g-image alt="Mattermost" src="~/images/mattermost-icon.png" />
               </span>
             </a>
             <br/>
